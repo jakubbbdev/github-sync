@@ -29,3 +29,12 @@ java {
     toolchain.languageVersion = JavaLanguageVersion.of(21)
 }
 
+
+tasks.named<ShadowJar>("shadowJar") {
+    archiveClassifier.set("")
+    manifest {
+        attributes(
+            "Main-Class" to "dev.jakub.github.Main"
+        )
+    }
+}
