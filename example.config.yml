@@ -1,0 +1,18 @@
+commit-message: "Global commit message"  # Optional, defaults to "Sync GitHub files"
+entries:
+  - commit-message: "Sync README" # Optionally, Overwrites the global commit message
+    from: # Copies from The repo jakubbbdev/jakubbbdev the file README.md
+      repo: "jakubbbdev/jakubbbdev" # Optionally, if not set, the repository of the action is getting selected
+      file: "README.md"
+    to: # Pastes as README.md (can also be renamed) in jakubbbdev/github-sync
+      repo: "jakubbbdev/github-sync" # Optionally, if not set, the repository of the action is getting selected
+      file: "showcase/README.md"
+
+  - ignored:
+      - "*.config.yml" # You can also exclude files and directories
+    from:
+      repo: "jakubbbdev/jakubbbdev"
+      file: ".github/" # You can also copy a whole directory
+    to:
+      repo: "jakubbbdev/github-sync"
+      file: "showcase/second/"
